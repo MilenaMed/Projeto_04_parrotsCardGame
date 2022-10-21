@@ -1,0 +1,35 @@
+body{
+    background-color: #eef9bf;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: center;
+    flex-flow: column wrap;
+}
+h1 {
+    color: #75B79E;
+    font-size: 50px;
+    font-weight: 700;
+    padding: 45px;
+}
+.conteiner {
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap:wrap;
+    gap: 30px;
+}
+.card {
+    width: 117px;
+    height: 146px;
+    background-color: #A7E9AF;
+    border: 1px solid #99CEA8;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imagem {
+    width: 100px;
+    height: 100px;
+}
