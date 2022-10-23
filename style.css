@@ -28,8 +28,20 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 1s;
 }
 .imagem {
     width: 100px;
     height: 100px;
+}
+.cardvirada {
+    transform: rotateY(180deg);
+}
+/* RESPONSIVIDADE */
+@media (max-width: 613px){
+    h1 {
+        font-size: 36px;
+        padding: 30px;
+        text-align: center;
+    }
 }
