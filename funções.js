@@ -23,7 +23,7 @@ function QuantidadeCartas() {
         for (let i = 0; i < quantidade; i++) {
             const item = `
                  <li>
-                 <div class="carta" onclick="virarCarta(this)">
+                 <div class="carta" onclick="virarCarta(this)" >
                     <div class="frente-face face">
                         <img src="imagens/back.png" class="imagem" />
                     </div>
@@ -64,8 +64,6 @@ function virarCarta(carta) {
      }
 }
 
-console.log(verificaMatch())
-
 function desvirar(var1, var2) {
         var1.classList.remove("virada");
         var2.classList.remove("virada");
@@ -75,6 +73,7 @@ function verificaMatch() {
     let carta1 = cartasViradas[0].innerHTML;
     let carta2 = cartasViradas[1].innerHTML;
      if (carta1 === carta2) {
+        finalizarJogo();
      } else {
         setTimeout(desvirar, 2000, cartasViradas[0], cartasViradas[1]);
      }
@@ -82,6 +81,12 @@ function verificaMatch() {
  }
 
 //  FINALIZAR JOGO
-//  function finalizarJogo(){
+clicks = 0
+
+ function finalizarJogo(){
+    let cartasDesviradas = document.querySelectorAll(".virada");
+    if (cartasDesviradas.length == quantidade){
+         alert(`Você ganhou em ${clicks} jogadas!`)
+    }
     
-//  }
+ }
