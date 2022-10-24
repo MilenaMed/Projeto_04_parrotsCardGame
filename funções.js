@@ -1,4 +1,4 @@
-// SELECIONAR A QUANTIDADE DE CARTAS
+// CRIAR CARTA E SELECIONAR QUANTIDADE DE CARTAS
 let quantidade = prompt("Com quantas cartas que jogar?");
 
 const imgViradas = [
@@ -23,11 +23,11 @@ function QuantidadeCartas() {
         for (let i = 0; i < quantidade; i++) {
             const item = `
                  <li>
-                 <div class="card" onclick="virarCarta(this)">
-                    <div class="front-face face">
+                 <div class="carta" onclick="virarCarta(this)">
+                    <div class="frente-face face">
                         <img src="imagens/back.png" class="imagem" />
                     </div>
-                    <div class="back-face face">
+                    <div class="costas-face face">
                     <img src="imagens/${imgViradas[Math.floor(i/2)]}.gif" class="imagem" />
                     </div>
                    </div>  
@@ -49,30 +49,39 @@ function QuantidadeCartas() {
 }
 QuantidadeCartas();
 
+// VIRAR E VERIFICAR SE AS CARTAS SÃO IGUAIS
 
-let contador = 0;
+let cartasViradas = []
+let indice = 0
 
 function virarCarta(carta) {
     carta.classList.toggle('virada');
-    contador++;
-
-    if (contador == 2) {
-        contador = 0;
-        // se as cartas forem diferentes
-        setTimeout(desvirar, 2000);
-
-    }
+     indice += 1;
+     cartasViradas.push(carta)
+     if (indice === 2) {
+        verificaMatch()
+         indice = 0;
+     }
 }
 
-function desvirar() {
-    const cartas = document.querySelectorAll('.virada');
-    for (let i = 0; i < cartas.length; i++) {
-        cartas[i].classList.remove('virada');
+console.log(verificaMatch())
+
+function desvirar(var1, var2) {
+        var1.classList.remove("virada");
+        var2.classList.remove("virada");
     }
-}
 
+function verificaMatch() {
+    let carta1 = cartasViradas[0].innerHTML;
+    let carta2 = cartasViradas[1].innerHTML;
+     if (carta1 === carta2) {
+     } else {
+        setTimeout(desvirar, 2000, cartasViradas[0], cartasViradas[1]);
+     }
+     cartasViradas = [];
+ }
 
-
-// COLOCAR AS IMAGENS EMBARALHADAS
-
-   // return Math.random() - 0.5;
+//  FINALIZAR JOGO
+//  function finalizarJogo(){
+    
+//  }

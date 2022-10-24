@@ -23,7 +23,7 @@ h1 {
     width: 100px;
     height: 100px;
 }
-  .card {
+  .carta {
     width: 117px;
     height: 146px;
     position: relative;
@@ -34,7 +34,6 @@ h1 {
     height: 100%;
     background-color: #a7e9af;
     border-radius: 10px;
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -44,15 +43,15 @@ h1 {
     transform-style: preserve-3d;
   }
   
-  .back-face {
+  .costas-face {
     transform: rotateY(180deg);
   }
  
-  .virada .back-face {
+  .virada .costas-face {
     transform: rotateY(0deg);
   }
   
-  .virada .front-face {
+  .virada .frente-face {
     transform: rotateY(-180deg);
   }
 
